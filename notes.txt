@@ -1,0 +1,21 @@
+# Route in pages router:
+
+In order to create a new route, just create a new file in "pages" folder and then give the name of the route. The convention is to name the page as the route name.
+
+Example: pages folder => cabins.js file
+
+# index.js file:
+
+Basically, it is a root route in a folder.
+
+# Nested routes:
+
+With folders inside of "pages" folder, we can create the nested folders. We can also create index.js file inside there.
+
+In simple words, the subfolder creates a new segment and index.js simply becomes the root route of that segment.
+
+# Pages router:
+
+The main difference of "pages router" is the application no longer uses the React Server Component model at all! All the components are client. So, we can use hooks anywhere. All of these components will simply be server-side rendered once and then HTML is sent to the browser and it's hydrated.
+
+App Router implements this new architecture.
