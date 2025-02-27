@@ -29,3 +29,7 @@ The file where we can change in which the structure of HTML should like. Usually
 The file where we can write our own global layout (it's like a root layout in the app router, _app.js = layout.js).
 
 Custom App accepts the "Component" (which is current page) and the "pageProps" (the props that are being passed to each Component).
+
+# Favicon and global title:
+
+These are made in _app.js file.
