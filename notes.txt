@@ -19,3 +19,13 @@ In simple words, the subfolder creates a new segment and index.js simply becomes
 The main difference of "pages router" is the application no longer uses the React Server Component model at all! All the components are client. So, we can use hooks anywhere. All of these components will simply be server-side rendered once and then HTML is sent to the browser and it's hydrated.
 
 App Router implements this new architecture.
+
+# _document.js:
+
+The file where we can change in which the structure of HTML should like. Usually, we never touch this file, so we can just delete it and NextJS will use it internally.
+
+# _app.js (custom app):
+
+The file where we can write our own global layout (it's like a root layout in the app router, _app.js = layout.js).
+
+Custom App accepts the "Component" (which is current page) and the "pageProps" (the props that are being passed to each Component).
