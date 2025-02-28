@@ -1,15 +1,32 @@
+import CabinView from "@/components/CabinView";
+import { getCabin } from "@/lib/data-service";
 import Head from "next/head";
 import { useRouter } from "next/router";
 
-function Cabin() {
-  const router = useRouter();
+// We fetch data on the server at request time
+// Dynamically generated (SSR)
+export async function getServerSideProps({ params }) {
+  const cabin = await getCabin(params.cabinId);
+
+  return { props: { cabin } };
+}
+
+// This is how we could do SSG:
+// getStaticPaths + getStaticProps
+
+function Cabin({ cabin }) {
+  // const router = useRouter();
 
   return (
     <>
       <Head>
-        <title>The Wild Oasis | Cabin #{router.query.cabinId}</title>
+        {/* <title>The Wild Oasis | Cabin #{router.query.cabinId}</title> */}
+        <title>The Wild Oasis | Cabin {cabin.name}</title>
       </Head>
-      <div>Cabin #{router.query.cabinId}</div>
+
+      <div className="mx-auto max-w-6xl mt-8">
+        <CabinView cabin={cabin} />
+      </div>
     </>
   );
 }
