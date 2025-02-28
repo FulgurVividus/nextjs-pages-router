@@ -33,3 +33,9 @@ Custom App accepts the "Component" (which is current page) and the "pageProps" (
 # Favicon and global title:
 
 These are made in _app.js file.
+
+# API routes:
+
+API routes are a lot more used than in "app router". This is the only way to do data mutations on the server. For this we must create "api" folder in "pages" and every file there will be treated as an API endpoint.
+
+The filename will define the URL of that API endpoint.
